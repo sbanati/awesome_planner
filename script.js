@@ -6,20 +6,18 @@ $(document).ready(function () {
   let today = dayjs(); // Initiates dayjs library
   let timeDisplayEl = $("#currentDay"); // links element to id
   let timeBlocksContainer = $(".container-lg"); // links element to class
-  let currentHour = today.hour();
+  let currentHour = today.hour(); // change to a value for testing or today.hour() for accurate reading
   const businessHours = [
-    "9AM",
-    "10AM",
-    "11AM",
-    "12PM",
-    "1PM",
-    "2PM",
-    "3PM",
-    "4PM",
-    "5PM",
+    { value: 9, display: "9AM" },
+    { value: 10, display: "10AM" },
+    { value: 11, display: "11AM" },
+    { value: 12, display: "12PM" },
+    { value: 13, display: "1PM" },
+    { value: 14, display: "2PM" },
+    { value: 15, display: "3PM" },
+    { value: 16, display: "4PM" },
+    { value: 17, display: "5PM" },
   ];
-  
-  
 
   // function to display time and date
   function displayTime() {
@@ -34,98 +32,60 @@ $(document).ready(function () {
     // Append the time block elements
     // Maybe we generate the elements using loop to create the elements on the fly
     for (let i = 0; i < businessHours.length; i++) {
+      
+      // stores the current value of the business hour into blockHour 
+      let blockHour = businessHours[i].value;
+      // stores the display property of the business hour element
+      let displayFormat = businessHours[i].display;
+
       // Create new time block element
       let timeBlock = $("<div>").addClass("row time-block");
 
       // Create the hourColumn element
-      let hourColumn = $("<div>").addClass(
-        "col-2 col-md-1 hour text-center py-3"
-      );
-      // Get text content for element
-      hourColumn.text(businessHours[i]);
+      let hourColumn = $("<div>").addClass( "col-2 col-md-1 hour text-center py-3");
+      
+      // sets the text content of the hourColumn to the displayFormat 
+      hourColumn.text(displayFormat);
+      
       // append the element
       timeBlock.append(hourColumn);
 
-      let descriptionTextarea = $("<textarea>")
-        .addClass("col-8 col-md-10 description")
-        .attr("rows", "3");
+      let descriptionTextarea = $("<textarea>").addClass("col-8 col-md-10 description").attr("rows", "3");
       timeBlock.append(descriptionTextarea);
 
       // create save button and icon and add class
-      let saveButton = $("<button>")
-        .addClass("btn saveBtn col-2 col-md-1")
-        .attr("aria-label", "save");
+      let saveButton = $("<button>").addClass("btn saveBtn col-2 col-md-1").attr("aria-label", "save");
+      
+      // creates the icon element and adds the class from font-awesome and adds attributes for accessibility
       let icon = $("<i>").addClass("fas fa-save").attr("aria-hidden", "true");
+      
       // Append icon to saveButton and then saveButton to timeBlock
       saveButton.append(icon);
       timeBlock.append(saveButton);
 
+      // appends the timeBlock element to the timeBlocksContainer
       timeBlocksContainer.append(timeBlock);
 
-      // Extract the hour from the businessHours array
-      let blockHour = parseInt(businessHours[i]);
-
-      // Adjust blockHour to 24-hour format (1PM and 2PM become 13 and 14)
-      if (businessHours[i].includes("PM") && blockHour !== 12) {
-        blockHour += 12;
-      }
+      // Use the determineTimeBlockClass function to get the appropriate class
+      let timeBlockClass = christmasCarol(blockHour, currentHour);
+      timeBlock.addClass(timeBlockClass);
+    }
+  }
+  // ha ha goofy function to apply the past/present/future classes
+  function christmasCarol(blockHour, currentHour) {
+    if (blockHour < currentHour) {
+      return "past";
+    } else if (blockHour === currentHour) {
+      return "present";
+    } else {
+      return "future";
     }
   }
 
-  function christmasCarol () {
-    // haha joke b/c of the past/present/future classes 
   
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
   
   // Calls displayTime function
   displayTime();
@@ -134,28 +94,6 @@ $(document).ready(function () {
   // Calls createTimeBlock function
   createTimeBlock();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
