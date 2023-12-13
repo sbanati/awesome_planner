@@ -27,12 +27,16 @@ $(document).ready(function () {
     timeDisplayEl.text(rightNow);
   }
 
+  
+
+
+  // function to create the html elements 
   function createTimeBlock() {
     // Create the time block html elements and add class
     // Append the time block elements
     // Maybe we generate the elements using loop to create the elements on the fly
     for (let i = 0; i < businessHours.length; i++) {
-      
+
       // stores the current value of the business hour into blockHour 
       let blockHour = businessHours[i].value;
       // stores the display property of the business hour element
@@ -40,6 +44,9 @@ $(document).ready(function () {
 
       // Create new time block element
       let timeBlock = $("<div>").addClass("row time-block");
+
+      // adds a unique id to the timeBlock based on the businessHour
+      timeBlock.attr('id', 'hour-' + blockHour);
 
       // Create the hourColumn element
       let hourColumn = $("<div>").addClass( "col-2 col-md-1 hour text-center py-3");
@@ -69,8 +76,30 @@ $(document).ready(function () {
       // Use the determineTimeBlockClass function to get the appropriate class
       let timeBlockClass = christmasCarol(blockHour, currentHour);
       timeBlock.addClass(timeBlockClass);
-    }
+    
+    
   }
+      /*Event listener with the on method. 
+       Must be inside the createTimeBlock function b/c the elements must exist first 
+       before data can be saved.*/
+      timeBlocksContainer.on('click', '.saveBtn', function () {
+        // Use Dom traversal to get the "hour-" id of the time-block containing the button
+        let timeBlockId = $(this).closest('.time-block').attr('id');
+    
+        // Get the user input from the description textArea
+        let savedUserEntry = $(this).siblings('.description').val();
+    
+        // Save the user input in local storage using the time block id as a key
+        localStorage.setItem(timeBlockId, savedUserEntry);
+      });
+    
+    }
+ 
+  
+
+  
+
+  
   // ha ha goofy function to apply the past/present/future classes
   function christmasCarol(blockHour, currentHour) {
     if (blockHour < currentHour) {
@@ -81,18 +110,44 @@ $(document).ready(function () {
       return "future";
     }
   }
+ 
+ 
+ 
+ 
+ 
+  
 
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Calls displayTime function
   displayTime();
   // Updates the time interval every 1 second
   setInterval(displayTime, 1000);
   // Calls createTimeBlock function
   createTimeBlock();
+  
 });
 
 
@@ -122,3 +177,8 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
 });
+
+
+
+
+
