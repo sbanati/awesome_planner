@@ -21,8 +21,10 @@ $(document).ready(function () {
 
   // function to display time and date
   function displayTime() {
+    
     //Sets rightNow to show the time using dayjs in desired format
     let rightNow = dayjs().format("dddd, MMMM, YYYY [|] h:mm:ss a");
+    
     // Call the element and display the text content document
     timeDisplayEl.text(rightNow);
   }
@@ -34,11 +36,11 @@ $(document).ready(function () {
   function createTimeBlock() {
     // Create the time block html elements and add class
     // Append the time block elements
-    // Maybe we generate the elements using loop to create the elements on the fly
     for (let i = 0; i < businessHours.length; i++) {
 
       // stores the current value of the business hour into blockHour 
       let blockHour = businessHours[i].value;
+      
       // stores the display property of the business hour element
       let displayFormat = businessHours[i].display;
 
@@ -57,7 +59,10 @@ $(document).ready(function () {
       // append the element
       timeBlock.append(hourColumn);
 
+      // create textarea element for the description in the timeblock and setting style.
       let descriptionTextarea = $("<textarea>").addClass("col-8 col-md-10 description").attr("rows", "3");
+      
+      // append the created textarea to the timeBlock element
       timeBlock.append(descriptionTextarea);
 
       // create save button and icon and add class
@@ -79,14 +84,14 @@ $(document).ready(function () {
     
     
   }
-      /*Event listener with the on method. 
-       Must be inside the createTimeBlock function b/c the elements must exist first 
+      /*Event mqust be inside the createTimeBlock function b/c the elements must exist first 
        before data can be saved.*/
       timeBlocksContainer.on('click', '.saveBtn', function () {
-        // Use Dom traversal to get the "hour-" id of the time-block containing the button
+        
+        // Get the attribute of the closest ancestor element with the class time-block from the current element marked by (this)
         let timeBlockId = $(this).closest('.time-block').attr('id');
     
-        // Get the user input from the description textArea
+        // Looks for elements that are siblings and has the class of description (of the current element defined by this) and retrieve the value
         let savedUserEntry = $(this).siblings('.description').val();
     
         // Save the user input in local storage using the time block id as a key
@@ -100,7 +105,7 @@ $(document).ready(function () {
   
 
   
-  // ha ha goofy function to apply the past/present/future classes
+  // ha ha goofy function to apply the past/present/future classes, get the joke?
   function christmasCarol(blockHour, currentHour) {
     if (blockHour < currentHour) {
       return "past";
@@ -120,9 +125,7 @@ $(document).ready(function () {
  // function to retrieve the user input from the saved local storage
  function retrieveUserInput () {
 
-  // Retrieve and display userinput from localStorage
-  // Add code to get any user input that was saved in localStorage
-  // and set the values of the corresponding textarea elements 
+  // uses .each method to iterate through all elements with the class time-block
   $('.time-block').each(function() {
     
   //Get the id attribute of the current time block
@@ -133,7 +136,7 @@ $(document).ready(function () {
   const value = localStorage.getItem(key);
   console.log('Retrieved value:', value);
   
-  // Set the retrieved value as the text content of the description textarea.
+  // Sets the retrieved value as the text content of the description textarea.
   $(this).children('.description').val(value);
   
     });
