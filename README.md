@@ -63,8 +63,7 @@
 This project is a Javascript challenge where I was given a starter code for a simple calender application. The user in mind can be anyone,
 but it is designed for someone with a typical working day schedule of 9am - 5pm. 
 <br><br>
-I was given an HTML/CSS/and Java file that had 9am - 11am. I was tasked with coding the GUI elements and the logic.<br>
-I also needed to add some save functionality using localstorage. The starter code provided used the Day.js library to work with date and time. <br>
+I was given an HTML/CSS/and Java file that had 9am - 11am. I was tasked with coding the GUI elements and the logic. I also needed to add some save functionality using localstorage. The starter code provided used the Day.js library to work with date and time. 
 I was given freedom to use any Javascript solution to handle the functionality. The project was powered by dynamically updated HTML and CSS powered by jQuery
 
 
@@ -79,6 +78,9 @@ I was given freedom to use any Javascript solution to handle the functionality. 
 * [![Static Badge](https://img.shields.io/badge/HTML5-red?style=for-the-badge&logo=HTML5&labelColor=black)](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 * [![Static Badge](https://img.shields.io/badge/CSS3-black?style=for-the-badge&logo=CSS3&logoColor=blue&labelColor=black&color=blue)](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 * [![Static Badge](https://img.shields.io/badge/Java-gray?style=for-the-badge&logo=JavaScript&logoColor=yellow)](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+* ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white
+* ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+* 
 
 
 
@@ -111,19 +113,11 @@ For anyone wanting to contribute <br>
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<h3>gif of the password generator running. You can see the user going through each prompt.</h3>
+<h3>gif of the day planner running. You can see the user testing the save functionality.</h3>
 
-![passGenGif](https://github.com/sbanati/PassGen/assets/149754544/ee2cefa3-adde-4342-8560-6f811e60212e)
+![planner_gif](https://github.com/sbanati/minimal_day_planner/assets/149754544/a3551886-ea6f-4310-aeb7-1c5f27347632)
 
-<br>
-<br>
 
-<h3>Screenshot provided below of the code for this project with extended notes with explanations.</h3> <br>
-<br> I realize this method is not feasible for future projects as codes will get much bigger, but for this project its ok 
-<br> <br>
-
-<img src="screenshots/passGenCodeCommented.png" alt="vscode script.js"> 
- 
 
 
 
@@ -138,9 +132,8 @@ For anyone wanting to contribute <br>
 
 <h3>Possible features</h3>
 
-* New design and style for prompt windows with yes/no confirmation instead of ok/cancel
-* GUI element built into the page where the prompts are not necessary and instead are check boxes for y/n prompts and a slide bar for the password length
-* Copy to clip board icon so the user can copy the password with ease
+* Adding functionality to go beyond the 9-5 and create entries for the future
+* Changing the GUI to a broader calender , and then each box for a day can be interacted with leading to the 9-5 GUI. 
 
 
 
@@ -169,8 +162,8 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 <!-- ACKNOWLEDGEMENT -->
 ## Acknowledgement
-* Practiced pair programming with Dan.
-* Worked with Jason to compare and contrast our projects and see differing methods. 
+* Practiced pair programming with Arkaw.
+
 
 
 
