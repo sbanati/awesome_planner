@@ -19,6 +19,9 @@ $(document).ready(function () {
     { value: 17, display: "5PM" },
   ];
 
+  
+  
+  
   // function to display time and date
   function displayTime() {
     
@@ -144,16 +147,6 @@ $(document).ready(function () {
   
   
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
