@@ -6,7 +6,7 @@ $(document).ready(function () {
   let today = dayjs(); // Initiates dayjs library
   let timeDisplayEl = $("#currentDay"); // links element to id
   let timeBlocksContainer = $(".container-lg"); // links element to class
-  let currentHour = today.hour(); // change to a value for testing or today.hour() for accurate reading
+  let currentHour = 12; // change to a value for testing or today.hour() for accurate reading
   const businessHours = [
     { value: 9, display: "9AM" },
     { value: 10, display: "10AM" },
