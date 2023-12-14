@@ -22,7 +22,7 @@
     <br />
 
     
-  <a href="https://sbanati.github.io/passGenerator/">View Demo</a>
+  <a href="https://sbanati.github.io/minimal_day_planner/">View Demo</a>
     
   <img src="screenshots/screenshot1.png" alt="rectangles with the time on the left and save icon on the right">
 
@@ -93,7 +93,7 @@ I was given freedom to use any Javascript solution to handle the functionality. 
 ## Getting Started
 
  <h3>For end users</h3> 
-https://sbanati.github.io/passGenerator/  <br>
+https://sbanati.github.io/minimal_day_planner/  <br>
 
 
 
