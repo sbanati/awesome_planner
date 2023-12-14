@@ -103,7 +103,7 @@ For anyone wanting to contribute <br>
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/sbanati/PassGen.git
+   git clone https://github.com/sbanati/minimal_day_planner
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -176,7 +176,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 Your Name - [@twitter_TherealSLVR](https://twitter.com/TherealSLVR) - smbanati@gmail.com
 
-Project Link: https://github.com/sbanati/PassGen
+Project Link: https://github.com/sbanati/minimal_day_planner
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,3 +189,4 @@ References:
 * https://dev.to/envoy_/150-badges-for-github-pnk#skills (for badges)
 * https://www.flaticon.com/free-icon/password_9177799 (for logo)
 * https://github.com/othneildrew/Best-README-Template (best readme template, given to me by the Grader from challenge 1!😊)
+* https://www.youtube.com/watch?v=cELVC0LMC5w&ab_channel=JavaGuides (used this guide to help me as I was stuck on localstorage for a little)
